@@ -309,7 +309,7 @@ def generate_data(times, protein_string):
     for a in range(times):
 
         # Set look ahead variable to four aminoacids
-        lookahead = 4
+        lookahead = 6
 
         # Initialize path 
         path = ""
@@ -358,7 +358,7 @@ def generate_data(times, protein_string):
             print("hoogste score", best_protein.score)
             
             # Write best routes and scores in the result file 
-            f = open("resultfile", "a")
+            f = open("resultfile_lookahead", "a")
             with f:
                 writer = csv.writer(f)
                 writer.writerow(["Lookahead", best_protein.route, best_protein.score])

@@ -401,7 +401,13 @@ def find_optimum(times, protein_structure):
         print("beste protein:", best_protein.route)
         print("beste score:", highest_score)
         print("bonds:", best_protein.bonds)
-        plot_best_protein(best_protein)
+        if best_protein != 0 and best_protein != None:
+            f = open("resultfile_greedy", "a")
+            with f:
+                writer = csv.writer(f)
+                writer.writerow(["Greedy", best_protein.route, best_protein.score])
+    
+        #plot_best_protein(best_protein)
     else:
         return 0
 

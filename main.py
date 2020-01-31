@@ -16,21 +16,21 @@ if __name__ == "__main__":
     """
   
     # Asks user for the number of times to run algorithm 
-    times = input("Please indicate the number of times to repeat the algoritm: ")
+    #times = input("Please indicate the number of times to repeat the algoritm: ")
 
     # Converts number of times to an integer
-    times_number = int(times)
+    #times_number = int(times)
 
     # Asks user for the protein structure
-    given_protein = input("Please give the protein structure: ")
+    #given_protein = input("Please give the protein structure: ")
 
     # Calls the find_optimum function giving along the times and protein structure as provided by the user
-    random.find_optimum(times=times_number, protein_structure=given_protein)
+    #random.find_optimum(times=times_number, protein_structure=given_protein)
 
     # ------------------------------------------------------------------ GREEDY ------------------------------------------------------------------
 
     # ------------------------------------------------------------------ PLOT PROTEIN ------------------------------------------------------------------
-
+    """
     # Asks user for the protein structure
     protein_string = input("Please give the protein structure: ")
     
@@ -44,44 +44,41 @@ if __name__ == "__main__":
     while True:
         if greedy_plotprotein.find_optimum(times = times_number, protein_structure = protein_string) != 0:
             break
-    
+    """
     # ------------------------------------------------------------------ COLLECT DATA ------------------------------------------------------------------
 
     # Open result file and initialize rows for the algoritm, route and stability 
-    f = open("resultfile", "w")
-    with f:
-        writer = csv.writer(f)
-        writer.writerow(["Algoritme", "Route", "Stability"])
+    #f = open("resultfile_lookahead", "w")
+    #with f:
+    #    writer = csv.writer(f)
+    #    writer.writerow(["Algoritme", "Route", "Stability"])
 
     # Ask user for the protein structure
-    protein_string = input("Please give the protein structure: ")
+    #protein_string = input("Please give the protein structure: ")
     
     # Ask user for the number of times to run algorithm 
-    times = input("Please indicate the number of times to repeat the algoritm: ")
+    #times = input("Please indicate the number of times to repeat the algoritm: ")
 
     # Convert number of times to an integer
-    times_number = int(times)
+    #times_number = int(times)
 
     # Run the algoritm as many times as indicated by the user
-    for a in range(times_number):
-       while True:
-           if greedy_collectdata.find_optimum(times = times_number, protein_structure = protein_string) != 0:
-               best_protein = greedy_collectdata.find_optimum(times = times_number, protein_structure = protein_string)
+    #for a in range(times_number):
+    #    while True:
+    #        if greedy_collectdata.find_optimum(times = times_number, protein_structure = protein_string) != 0:
+    #            best_protein = greedy_collectdata.find_optimum(times = times_number, protein_structure = protein_string)
                 # Write results of best proteins in the result file
-               if best_protein != 0 and best_protein != None:
-                   f = open("resultfile", "a")
-                   with f:
-                       writer = csv.writer(f)
-                       writer.writerow(["Lookahead", best_protein.route, best_protein.score])
-               break
+
+                
+    """
 
     # ------------------------------------------------------------------ BREADTHFIRST ------------------------------------------------------------------
 
-    """
-    This function first asks the user for the protein structure.
-    Subsequently, it creates the queue of all possible unique routes given the protein structure. From those, it selects only 
-    valid routes and from these finds and plots the best protein. 
-    """
+    #"""
+    #This function first asks the user for the protein structure.
+    #Subsequently, it creates the queue of all possible unique routes given the protein structure. From those, it selects only 
+    #valid routes and from these finds and plots the best protein. 
+    #"""
 
     # Asks user for the protein structure
     # protein_string = input("Please give the protein structure: ")
@@ -97,7 +94,7 @@ if __name__ == "__main__":
 
     # ------------------------------------------------------------------ LOOKAHEAD ------------------------------------------------------------------
     # ------------------------------------------------------------------ PLOT PROTEIN ------------------------------------------------------------------
-
+    
     # Ask user for protein structure 
     protein_string = input("Please give the protein structure: ")
     
@@ -146,24 +143,25 @@ if __name__ == "__main__":
     # plot protein
     if best_protein != 0:
         lookahead_plotprotein.plot_best_protein(best_protein)
+    
 
     # ------------------------------------------------------------------ COLLECT DATA ------------------------------------------------------------------
 
     # Open result file and initialize rows for the algoritm, route and stability 
-    f = open("resultfile", "w")
-    with f:
-        writer = csv.writer(f)
-        writer.writerow(["Algoritme", "Route", "Stability"])
+    #f = open("resultfile_lookahead", "w")
+    #with f:
+    #    writer = csv.writer(f)
+    #    writer.writerow(["Algoritme", "Route", "Stability"])
     
     # Ask user for the protein structure
-    protein_string = input("Please give the protein structure: ")
-    protein_string = input("Please give the protein structure: ")
+    #protein_string = input("Please give the protein structure: ")
+    #protein_string = input("Please give the protein structure: ")
 
     # Ask user for the number of times to run algorithm 
-    times = input("Please indicate the number of times to repeat the algoritm: ")
+    #times = input("Please indicate the number of times to repeat the algoritm: ")
 
     # Convert number of times to an integer
-    times_number = int(times)
+    #times_number = int(times)
 
     # Call the generate data function and pass along the number of times to run the algoritm and the protein structure
-    lookahead_collectdata.generate_data(times = times_number, protein_string = protein_string)
+    #lookahead_collectdata.generate_data(times = times_number, protein_string = protein_string)

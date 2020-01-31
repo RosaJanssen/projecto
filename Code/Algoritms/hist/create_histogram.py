@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Walk through data created in the algorithm
-data = pd.read_csv('resultfile_lookahead', sep=',', index_col =0)
+data = pd.read_csv('resultfile_random', sep=',', index_col =0)
 
 # Make histogram
 plt.hist(data["Stability"], bins=range(int(max(data["Stability"])+ 1)), color='#0504aa', alpha=0.7, rwidth=0.85)
@@ -16,6 +16,6 @@ plt.ylabel('Frequency')
 plt.xlabel('Stability')
 
 # Name title
-plt.title('Lookahead algorithm (3)')
+plt.title('Random algoritm')
 
 plt.show()

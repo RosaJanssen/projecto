@@ -253,7 +253,7 @@ def find_optimum(times, protein_structure):
 
     # Repeat the following process as many times as indicated by the user
     for i in range(times):
-        
+        print("hoi")
         # Call the protein structure
         protein = Protein(protein_structure)
 
@@ -263,6 +263,7 @@ def find_optimum(times, protein_structure):
         # If the latter function makes a valid route, calculate its score and write the route and its score in the result file 
         if protein.wrong_protein == False:
             calculate_score(protein = protein)
+            
             f = open("resultfile", "a")
             with f:
                 writer = csv.writer(f)
@@ -298,6 +299,7 @@ def find_optimum(times, protein_structure):
     print("bonds:", best_protein.bonds)
     print(best_protein.bonds)
 
+    """
     # Initialize axis
     plt.axis([-10,10,-10,10])
 
@@ -419,7 +421,7 @@ def find_optimum(times, protein_structure):
     # Show plot
     plt.show()
 
-    
+    """
 
 
 if __name__ == "__main__":
